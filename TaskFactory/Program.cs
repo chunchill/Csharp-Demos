@@ -11,7 +11,9 @@ namespace ParallelDemos
     {
         static void Main(string[] args)
         {
-            TaskFactoryDemo();
+            //TaskFactoryDemo();
+            var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
+            Console.WriteLine(bytes);
             Console.Read();
         }
 
@@ -46,20 +48,21 @@ namespace ParallelDemos
                 }
 
                 // CancellationToken.None would override the one passed into TaskFactory,so even the cts.Token is canceled,this task would be always excuted.
-                tf.ContinueWhenAll(childTasks, 
+                tf.ContinueWhenAll(childTasks,
                     complatedTasks => complatedTasks.Where(t => !t.IsFaulted && !t.IsCanceled).Max(t => t.Result), CancellationToken.None).
                     ContinueWith(t => Console.WriteLine("The maximum is: " + t.Result), TaskContinuationOptions.ExecuteSynchronously);
-              
+
             });
 
             parent.ContinueWith(p =>
             {
                 StringBuilder sb = new StringBuilder("The following exeption(s) occured: " + Environment.NewLine);
-                foreach(var e in p.Exception.Flatten().InnerExceptions){
-                    sb.AppendLine(""+e.GetType().ToString());
+                foreach (var e in p.Exception.Flatten().InnerExceptions)
+                {
+                    sb.AppendLine("" + e.GetType().ToString());
                     Console.WriteLine(sb.ToString());
                 }
-            },TaskContinuationOptions.OnlyOnFaulted);
+            }, TaskContinuationOptions.OnlyOnFaulted);
 
             parent.Start();
         }
