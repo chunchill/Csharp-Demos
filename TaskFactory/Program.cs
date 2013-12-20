@@ -12,8 +12,9 @@ namespace ParallelDemos
         static void Main(string[] args)
         {
             //TaskFactoryDemo();
-            var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
-            Console.WriteLine(bytes);
+            //var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
+            //Console.WriteLine(bytes);
+            TimerDemo.Go();
             Console.Read();
         }
 
