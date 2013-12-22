@@ -14,7 +14,8 @@ namespace ParallelDemos
             //TaskFactoryDemo();
             //var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
             //Console.WriteLine(bytes);
-            TimerDemo.Go();
+            //TimerDemo.Go();
+            APMExceptionHandling.Go();
             Console.Read();
         }
 
