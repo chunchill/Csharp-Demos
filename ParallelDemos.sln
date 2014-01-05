@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDemos", "TaskFactory\TaskFactory.csproj", "{67FB10DD-AAAF-4F0B-A21A-DC5D499D239C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDemo", "TaskFactory\ConsoleDemo.csproj", "{67FB10DD-AAAF-4F0B-A21A-DC5D499D239C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizationContextTaskScheduler", "SynchronizationContextTaskScheduler\SynchronizationContextTaskScheduler.csproj", "{D1F6D495-D6A9-43DE-8892-35D2933B606F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormDemo", "SynchronizationContextTaskScheduler\WinFormDemo.csproj", "{D1F6D495-D6A9-43DE-8892-35D2933B606F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
