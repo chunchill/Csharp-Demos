@@ -10,7 +10,7 @@ namespace ParallelDemos
 {
     class ParallerLoop
     {
-        public static Int64 GetDirecotryBytes(string path,string searchPattern,SearchOption searchOption) 
+        static Int64 GetDirecotryBytes(string path, string searchPattern, SearchOption searchOption)
         {
             var files = Directory.EnumerateDirectories(path, searchPattern, searchOption);
             Int64 masterTotal = 0;
@@ -21,7 +21,7 @@ namespace ParallelDemos
             },
             (file, loopState, index, taskLocalTotal) =>
             {
-                
+
                 Int64 fileLength = 0;
                 FileStream fs = null;
                 try
@@ -43,8 +43,14 @@ namespace ParallelDemos
             {
                 Interlocked.Add(ref masterTotal, taskLocalTotal);
             });
-            
+
             return masterTotal;
+        }
+
+        public static void Go()
+        {
+            var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
+            Console.WriteLine(bytes);
         }
     }
 }

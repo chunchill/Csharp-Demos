@@ -7,19 +7,8 @@ using System.Threading.Tasks;
 
 namespace ParallelDemos
 {
-    class Program
+    class TaskFactory
     {
-        static void Main(string[] args)
-        {
-            //TaskFactoryDemo();
-            //var bytes = ParallerLoop.GetDirecotryBytes("C:\\blogs", "*.*", System.IO.SearchOption.TopDirectoryOnly);
-            //Console.WriteLine(bytes);
-            //TimerDemo.Go();
-            //APMExceptionHandling.Go();
-            RegisterdWaitHandlerDemo.Go();
-            Console.Read();
-        }
-
         private static Int32 Sum(CancellationToken ct, Int32 n)
         {
             Int32 sum = 0;
@@ -31,7 +20,7 @@ namespace ParallelDemos
             return sum;
         }
 
-        private static void TaskFactoryDemo()
+        public static void Go()
         {
             Task parent = new Task(() =>
             {
@@ -51,9 +40,8 @@ namespace ParallelDemos
                 }
 
                 // CancellationToken.None would override the one passed into TaskFactory,so even the cts.Token is canceled,this task would be always excuted.
-                tf.ContinueWhenAll(childTasks,
-                    complatedTasks => complatedTasks.Where(t => !t.IsFaulted && !t.IsCanceled).Max(t => t.Result), CancellationToken.None).
-                    ContinueWith(t => Console.WriteLine("The maximum is: " + t.Result), TaskContinuationOptions.ExecuteSynchronously);
+                tf.ContinueWhenAll(childTasks, complatedTasks => complatedTasks.Where(t => !t.IsFaulted && !t.IsCanceled).Max(t => t.Result), CancellationToken.None)
+                  .ContinueWith(t => Console.WriteLine("The maximum is: " + t.Result), TaskContinuationOptions.ExecuteSynchronously);
 
             });
 

@@ -1,6 +1,6 @@
 ﻿namespace SynchronizationContextTaskScheduler
 {
-    partial class GUI
+    partial class TaskSchedulers
     {
         /// <summary>
         /// Required designer variable.

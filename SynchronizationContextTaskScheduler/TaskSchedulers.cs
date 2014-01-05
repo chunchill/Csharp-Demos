@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace SynchronizationContextTaskScheduler
 {
-    public partial class GUI : Form
+    public partial class TaskSchedulers : Form
     {
-        public GUI()
+        public TaskSchedulers()
         {
             InitializeComponent();
             Text = "Synchronization Context Task Scheduler Demo";
