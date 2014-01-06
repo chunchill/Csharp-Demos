@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ParallelDemos
 {
-    public class TaskDemo
+    public class TaskAndAggregateExceptionDemo
     {
         public static void Go()
         {

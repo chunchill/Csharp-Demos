@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace ParallelDemos
 {
+    /*Page-733
+     * Because async functions return before their state machine has executed all the way to completion, 
+     * the method calling IssueClientRequestAsync will continue its execution right after Issue­
+     * Client RequestAsync executes its first await operator. But, how can the caller know when Issue­
+     * ClientRequestAsync has completed executing its state machine in its entirety? Well, when you 
+     * mark a method as async, the compiler automatically generates code that creates a Task object when 
+     * the state machine begins its execution.
+     */
     public class AsynchronousFunctionsDemo
     {
         private static async Task<String> IssueClientRequestAsync(String serverName, string pipeName, String message)

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="APMExceptionHandling.cs" />
     <Compile Include="APMWithTask.cs" />
+    <Compile Include="AsyncAwaitDemo.cs" />
     <Compile Include="AsynchronousFunctionsDemo.cs" />
     <Compile Include="AsyncResultDemo.cs" />
     <Compile Include="CancellationDemo.cs" />
@@ -56,12 +57,14 @@
     <Compile Include="ForegroundAndBackGroundThreads.cs" />
     <Compile Include="ParallerLoop.cs" />
     <Compile Include="PLINQDemo.cs" />
-    <Compile Include="TaskDemo.cs" />
+    <Compile Include="SimpleAwaitDemo.cs" />
+    <Compile Include="TaskAndAggregateExceptionDemo.cs" />
     <Compile Include="TaskFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueUserWorkItemDemo.cs" />
     <Compile Include="RegisterdWaitHandlerDemo.cs" />
     <Compile Include="SimpleSpinLock.cs" />
+    <Compile Include="TaskLogger.cs" />
     <Compile Include="TimerDemo.cs" />
   </ItemGroup>
   <ItemGroup>

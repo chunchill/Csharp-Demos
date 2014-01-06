@@ -24,7 +24,9 @@ namespace ParallelDemos
             //ForegroundAndBackGroundThreads.Go();
             //QueueUserWorkItemDemo.Go();
             //TaskDemo.Go();
-            TaskFactory.Go();
+            //TaskFactory.Go();
+            //TaskLogger.Go();
+            SimpleAwaitDemo.Go();
             Console.Read();
         }
     }
