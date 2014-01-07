@@ -31,7 +31,6 @@ namespace ParallelDemos
         {
             var t = Wrap();
             Console.WriteLine("...");
-            Console.Read();
         }
     }
 }
