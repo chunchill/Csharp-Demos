@@ -79,7 +79,7 @@
             // 
             this.btnShowCurrentTime.Location = new System.Drawing.Point(119, 232);
             this.btnShowCurrentTime.Name = "btnShowCurrentTime";
-            this.btnShowCurrentTime.Size = new System.Drawing.Size(75, 23);
+            this.btnShowCurrentTime.Size = new System.Drawing.Size(193, 23);
             this.btnShowCurrentTime.TabIndex = 4;
             this.btnShowCurrentTime.Text = "Show Current Time Demo";
             this.btnShowCurrentTime.UseVisualStyleBackColor = true;

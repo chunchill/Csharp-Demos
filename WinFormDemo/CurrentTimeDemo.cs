@@ -23,7 +23,7 @@ namespace SynchronizationContextTaskScheduler
         }
         void timer_Tick(object sender, EventArgs e)
         {
-            this.label1.Text = DateTime.Now.ToLocalTime().ToString();
+            UpdateUI();
         }
 
 
@@ -32,7 +32,9 @@ namespace SynchronizationContextTaskScheduler
             var thread = new Thread(new ParameterizedThreadStart((o) =>
             {
                 while (true)
-                    this.label1.Text = DateTime.Now.ToLocalTime().ToString();
+                {
+                    UpdateUI();
+                }
             }));
             thread.Start();
         }
@@ -49,21 +51,18 @@ namespace SynchronizationContextTaskScheduler
 
         public void ShowTime3()
         {
-
             var thread = new Thread(new ParameterizedThreadStart((o) =>
             {
+
                 while (true)
                 {
                     var result = this.BeginInvoke(new MethodInvoker(() =>
                     {
-
-                        this.label1.Text = DateTime.Now.ToLocalTime().ToString();
-
+                        UpdateUI();
                     }));
                     this.EndInvoke(result);
                     Thread.Sleep(1000);
                 }
-
             }));
             thread.IsBackground = true;
             thread.Start();
@@ -99,7 +98,7 @@ namespace SynchronizationContextTaskScheduler
         /// <summary>
         /// This method is executed on the main UI thread.
         /// </summary>
-        private void UpdateUI(object state)
+        private void UpdateUI(object state = null)
         {
             this.label1.Text = DateTime.Now.ToLocalTime().ToString();
         }
@@ -109,8 +108,8 @@ namespace SynchronizationContextTaskScheduler
         {
             //ShowTime1();
             //ShowTime2();
-            //ShowTime3();
-            ShowTime4();
+            ShowTime3();
+            //ShowTime4();
         }
     }
 }

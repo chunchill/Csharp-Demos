@@ -16,6 +16,7 @@ namespace SynchronizationContextTaskScheduler
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Demos());
+            //Application.Run(new CurrentTimeDemo());
         }
     }
 }
