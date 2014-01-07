@@ -80,6 +80,12 @@
     <Compile Include="SynchronizationContextPost.Designer.cs">
       <DependentUpon>SynchronizationContextPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentTimeDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentTimeDemo.Designer.cs">
+      <DependentUpon>CurrentTimeDemo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AsyncAndAwait.resx">
       <DependentUpon>AsyncAndAwait.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaskSchedulers.resx">
       <DependentUpon>TaskSchedulers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentTimeDemo.resx">
+      <DependentUpon>CurrentTimeDemo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

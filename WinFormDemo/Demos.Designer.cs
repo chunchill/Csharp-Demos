@@ -32,6 +32,7 @@
             this.btnAsyncAwait = new System.Windows.Forms.Button();
             this.btnSynchonizationContextDemo = new System.Windows.Forms.Button();
             this.btnEAPDemo = new System.Windows.Forms.Button();
+            this.btnShowCurrentTime = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTaskSchedulerDemo
@@ -74,11 +75,22 @@
             this.btnEAPDemo.UseVisualStyleBackColor = true;
             this.btnEAPDemo.Click += new System.EventHandler(this.btnEAPDemo_Click);
             // 
+            // btnShowCurrentTime
+            // 
+            this.btnShowCurrentTime.Location = new System.Drawing.Point(119, 232);
+            this.btnShowCurrentTime.Name = "btnShowCurrentTime";
+            this.btnShowCurrentTime.Size = new System.Drawing.Size(75, 23);
+            this.btnShowCurrentTime.TabIndex = 4;
+            this.btnShowCurrentTime.Text = "Show Current Time Demo";
+            this.btnShowCurrentTime.UseVisualStyleBackColor = true;
+            this.btnShowCurrentTime.Click += new System.EventHandler(this.btnShowCurrentTime_Click);
+            // 
             // Demos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 355);
+            this.Controls.Add(this.btnShowCurrentTime);
             this.Controls.Add(this.btnEAPDemo);
             this.Controls.Add(this.btnSynchonizationContextDemo);
             this.Controls.Add(this.btnAsyncAwait);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Button btnAsyncAwait;
         private System.Windows.Forms.Button btnSynchonizationContextDemo;
         private System.Windows.Forms.Button btnEAPDemo;
+        private System.Windows.Forms.Button btnShowCurrentTime;
     }
 }

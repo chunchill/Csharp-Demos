@@ -40,5 +40,11 @@ namespace SynchronizationContextTaskScheduler
             EAPDemo demo = new EAPDemo();
             demo.Show();
         }
+
+        private void btnShowCurrentTime_Click(object sender, EventArgs e)
+        {
+            CurrentTimeDemo demo = new CurrentTimeDemo();
+            demo.Show();
+        }
     }
 }

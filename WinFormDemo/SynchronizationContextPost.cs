@@ -31,7 +31,7 @@ namespace SynchronizationContextTaskScheduler
 
         private void ProcessWebResponse(IAsyncResult ar)
         {
-            var webRequest = (WebRequest)ar.AsyncState;
+            var webRequest = (WebRequest)ar.AsyncState; 
             using (var webResponse = webRequest.EndGetResponse(ar))
             {
                 Text = "Content length:" + webResponse.ContentLength;
