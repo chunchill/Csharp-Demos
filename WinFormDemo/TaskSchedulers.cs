@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,33 +11,39 @@ namespace SynchronizationContextTaskScheduler
         {
             InitializeComponent();
             Text = "Synchronization Context Task Scheduler Demo";
-            m_SyncContexTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+            _mSyncContexTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();
             Visible = true;
             Width = 400;
             Height = 100;
         }
 
-        private readonly TaskScheduler m_SyncContexTaskScheduler;
-        private CancellationTokenSource m_cts;
+       public override sealed string Text
+       {
+          get { return base.Text; }
+          set { base.Text = value; }
+       }
+
+       private readonly TaskScheduler _mSyncContexTaskScheduler;
+        private CancellationTokenSource _mCts;
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
-            if (m_cts != null)
+            if (_mCts != null)
             {
-                m_cts.Cancel();
-                m_cts = null;
+                _mCts.Cancel();
+                _mCts = null;
             }
             else
             {
                 Text = "Operation running";
             }
-            m_cts = new CancellationTokenSource();
+            _mCts = new CancellationTokenSource();
 
-            var t = new Task<Int32>(() => Sum(m_cts.Token, Int32.MaxValue), m_cts.Token);
+            var t = new Task<Int32>(() => Sum(_mCts.Token, Int32.MaxValue), _mCts.Token);
             t.Start();
-            t.ContinueWith(task => { Text = "Result" + task.Result; }, CancellationToken.None, TaskContinuationOptions.OnlyOnRanToCompletion, m_SyncContexTaskScheduler);
-            t.ContinueWith(task => { Text = "Operation Cancled"; }, CancellationToken.None, TaskContinuationOptions.OnlyOnCanceled, m_SyncContexTaskScheduler);
-            t.ContinueWith(task => { Text = "Operation Faulted"; }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted, m_SyncContexTaskScheduler);
+            t.ContinueWith(task => { Text = "Result" + task.Result; }, CancellationToken.None, TaskContinuationOptions.OnlyOnRanToCompletion, _mSyncContexTaskScheduler);
+            t.ContinueWith(task => { Text = "Operation Cancled"; }, CancellationToken.None, TaskContinuationOptions.OnlyOnCanceled, _mSyncContexTaskScheduler);
+            t.ContinueWith(task => { Text = "Operation Faulted"; }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted, _mSyncContexTaskScheduler);
             base.OnMouseClick(e);
         }
 
