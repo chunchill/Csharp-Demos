@@ -77,7 +77,9 @@
     <Compile Include="OptimizedAwayDemo.cs" />
     <Compile Include="ParallerLoop.cs" />
     <Compile Include="PLINQDemo.cs" />
+    <Compile Include="SemaphoreDemo.cs" />
     <Compile Include="SimpleAwaitDemo.cs" />
+    <Compile Include="SimpleWaitLockDemo.cs" />
     <Compile Include="TaskAndAggregateExceptionDemo.cs" />
     <Compile Include="TaskFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
