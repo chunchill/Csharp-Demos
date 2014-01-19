@@ -87,7 +87,7 @@ namespace ParallelDemos
                     // Create builder returning Task<String> from this stub method 
                     // State machine accesses builder to set Task completion/exception 
                     m_builder = AsyncTaskMethodBuilder<String>.Create(),
-                    m_state = 1,         // Initialize state machine location 
+                    m_state = -1,         // Initialize state machine location 
                     m_argument = argument   // Copy arguments to state machine fields 
                 };
 
@@ -124,7 +124,7 @@ namespace ParallelDemos
                     try
                     {
                         Boolean executeFinally = true;   // Assume we're logically leaving the 'try' block 
-                        if (m_state == 1)
+                        if (m_state == -1)
                         {             // If 1st time in state machine method, 
                             m_local = m_argument;         // execute start of original method 
                         }
