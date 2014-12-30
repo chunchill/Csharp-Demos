@@ -1,0 +1,29 @@
+Common/Cross cutting,Data Access,DI,Error handling,Security,Validation,Page Layout
+
+Convention over configuration
+
+The ASP.NET MVC "Problem"
+1.NO IoC Container
+2.Lacks Solutions to Common problems
+3.String-Based Helpers
+
+============================================================
+StructMap
+
+DependencyResolver.SetResolver(new StructMapDependencyResolver());
+ObjectFactory.Configue(cfg=>
+{
+	cfg.Scan(scan=>
+	{
+		scan.TheCallingAssembly();
+		scan.WithDefaultConventions();
+	}
+	);
+});
+
+ObjectFactory.GetInstance<IRespository<User>>();
+
+AutoMapper
+Micorsoft.AspNet.MVC.Features
+
+Model Metadata:DataType,Display Hint,DisplayName
